@@ -51,7 +51,9 @@ Use these tasks as a warm up as you familiarize yourself with the codebase:
 - Get player names from the user using the `input` function
 - Print the player win rate as a percent, rounded to the 2nd decimal place
     - You could write this as a _helper function_ in the `Player` class
-- Rewrite the list comprehension in `win_rate` to use a regular for loop
+- Rewrite the list comprehension in `Player.win_rate` to use a regular for loop
+- Rewrite the `Deck.shuffle` method to not call the builtin `shuffle` function (you'll need to use a loop!)
+    - Bonus: try doing it without creating a new list
 
 
 ## Add functionality to the Card Class
