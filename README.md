@@ -92,6 +92,15 @@ Implement rules for a different game. You may have to completely rewrite the `di
 - [Crazy Eights](https://en.wikipedia.org/wiki/Crazy_Eights) (basically UNO)
 - Any kind of poker
 
+## Add Tests
+
+Hopefully you've been testing your changes as you make them, but it can get repetitive to have to go through all the steps to reproduce the behavior you want to see. That's why we have _testing frameworks_ which allow us to write scripts that we can execute repetitively and deterministically. We'll be using the [pytest](https://docs.pytest.org/en/7.4.x/getting-started.html) framework. In the `/tests` directory you'll find two tests already written. 
+
+- Run them in the terminal with `pytest`. 
+- Generate a coverage report with `coverage run -m pytest`
+- View code coverage in the terminal with `coverage report -m`
+- Generate an HTML coverage report with `coverage html`
+
 
 
 
