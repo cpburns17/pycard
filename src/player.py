@@ -7,11 +7,12 @@ if TYPE_CHECKING:
 
 import ipdb
 import traceback
+from hand import Hand 
 
 class Player:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.hand: list[Card] = []
+        self.hand = Hand()
         self.games: list[Game] = []
 
     @property
@@ -27,9 +28,6 @@ class Player:
             raise ValueError("player's name must have at least one character")
         self._name = name
 
-    @property
-    def has_card(self) -> bool:
-        return len(self.hand) > 0
 
     @property
     def win_rate(self) -> float:
@@ -40,7 +38,10 @@ class Player:
         won_games: list[Game] = [game for game in self.games if game.winner == self]
         return len(won_games) / games_played
 
-    def play_card(self) -> Card:
-        if not self.has_card:
-            raise ValueError('cannot play card from empty hand')
-        return self.hand.pop()
+    def float_to_percent(self, flt):
+        return f'{round(flt * 100, 2)}%'
+    
+    def add_card_to_hand(self, card):
+        self.hand.cards.append(card)
+
+

@@ -10,8 +10,13 @@ if __name__ == "__main__":
     rate for each player. 
     '''
 
-    player1 = Player("player 1")
-    player2 = Player("player 2")
+    # import ipdb;
+    # ipdb.set_trace()
+
+    player1_name = input('Enter Player 1\'s name')
+    player1 = Player(player1_name)
+    player2_name = input('Enter Player 2\'s name')
+    player2 = Player(player2_name)
     deck = Deck()
     game = Game(p1=player1, p2=player2, deck=deck)
     game.play()
@@ -19,6 +24,6 @@ if __name__ == "__main__":
         deck.reset()
         game = Game(player1, player2, deck)
         game.play()
-    print(f"{player1.name}'s win rate {player1.win_rate}")
-    print(f"{player2.name}'s win rate {player2.win_rate}")
+    print(f"{player1.name}'s win rate {player1.float_to_percent(player1.win_rate)}")
+    print(f"{player2.name}'s win rate {player2.float_to_percent(player2.win_rate)}")
 
